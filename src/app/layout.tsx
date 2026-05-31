@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Maven_Pro, Lato } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const mavenPro = Maven_Pro({
   variable: "--font-maven-pro",
@@ -29,7 +31,11 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${mavenPro.variable} ${lato.variable} antialiased`}
     >
-      <body className="min-h-screen flex flex-col">{children}</body>
+      <body className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
